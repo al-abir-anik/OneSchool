@@ -1,5 +1,41 @@
 @import "tailwindcss";
 
+@theme {
+  --color-aaaSky: #c3ebfa;
+  --color-aaaSkyLight: #edf9fd;
+  --color-aaaPurple: #cfceff;
+  --color-aaaPurpleLight: #f1f0ff;
+  --color-aaaYellow: #fae27c;
+  --color-aaaYellowLight: #fefce8;
+}
+
+:root {
+  --font-poppins: "Poppins";
+}
+
+body {
+  font-family: var(--font-poppins);
+}
+
+
+/* react Calender */
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  font-family: "Poppins" !important;
+}
+.react-calendar__navigation__label__labelText {
+  font-weight: 600 !important;
+}
+.react-calendar__tile--active {
+  background-color: var(--color-aaaSky) !important;
+}
+
+
+
+
+
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
