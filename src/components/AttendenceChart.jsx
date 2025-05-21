@@ -70,13 +70,13 @@ const AttendenceChart = () => {
             dataKey="present"
             fill="#FAE27C"
             legendType="circle"
-            radius={[10,10,0,0]}
+            radius={[3,3,0,0]}
           />
           <Bar
             dataKey="absent"
             fill="#C3EBFA"
             legendType="cicle"
-             radius={[10,10,0,0]}
+             radius={[3,3,0,0]}
           />
         </BarChart>
       </ResponsiveContainer>

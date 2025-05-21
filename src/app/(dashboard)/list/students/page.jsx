@@ -1,7 +1,7 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role, teachersData } from "@/library/data";
+import { role, studentsData } from "@/library/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,20 +12,16 @@ const columns = [
     className: "pl-5",
   },
   {
-    header: "Teacher ID",
-    accessor: "teacherId",
+    header: "Student ID",
+    accessor: "studentId",
     className: "hidden md:table-cell",
   },
   {
-    header: "Subjects",
-    accessor: "subjects",
+    header: "Grade",
+    accessor: "grade",
     className: "hidden md:table-cell",
   },
-  {
-    header: "Classes",
-    accessor: "classes",
-    className: "hidden md:table-cell",
-  },
+
   {
     header: "Phone",
     accessor: "phone",
@@ -42,7 +38,7 @@ const columns = [
   },
 ];
 
-const TeachersListPage = () => {
+const StudentsListPage = () => {
   const renderRow = (item) => {
     return (
       <tr
@@ -59,12 +55,11 @@ const TeachersListPage = () => {
           />
           <div className="flex flex-col">
             <h3 className="font-semibold">{item.name}</h3>
-            <p className="text-xs text-gray-500">{item?.email}</p>
+            <p className="text-xs text-gray-500">{item.class}</p>
           </div>
         </td>
-        <td className="hidden md:table-cell">{item.teacherId}</td>
-        <td className="hidden md:table-cell">{item.subjects.join(",")}</td>
-        <td className="hidden md:table-cell">{item.classes.join(",")}</td>
+        <td className="hidden md:table-cell">{item.studentId}</td>
+        <td className="hidden md:table-cell md:px-3">{item.grade}</td>
         <td className="hidden md:table-cell">{item.phone}</td>
         <td className="hidden md:table-cell">{item.address}</td>
         <td>
@@ -86,10 +81,10 @@ const TeachersListPage = () => {
   };
 
   return (
-    <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
+    <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0 ml-2 md:ml-4">
       {/* TOP */}
       <div className="flex items-center justify-between p-2">
-        <h1 className="hidden md:block text-lg font-semibold">All Teachers</h1>
+        <h1 className="hidden md:block text-lg font-semibold">All Students</h1>
         <div className="w-full md:w-auto flex flex-col md:flex-row items-center gap-4">
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
@@ -108,11 +103,11 @@ const TeachersListPage = () => {
         </div>
       </div>
       {/* LIST */}
-      <Table columns={columns} renderRow={renderRow} data={teachersData} />
+      <Table columns={columns} renderRow={renderRow} data={studentsData} />
       {/* PAGINATION */}
       <Pagination />
     </div>
   );
 };
 
-export default TeachersListPage;
+export default StudentsListPage;

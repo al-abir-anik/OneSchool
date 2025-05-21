@@ -1,4 +1,6 @@
-const Table = ({ columns }) => {
+const Table = ({ columns, renderRow, data }) => {
+
+
   return (
     <table className="w-full mt-4">
       <thead>
@@ -10,7 +12,7 @@ const Table = ({ columns }) => {
           ))}
         </tr>
       </thead>
-      {/* <tbody>{data.map((item) => renderRow(item))}</tbody> */}
+      <tbody>{data.map((item) => renderRow(item))}</tbody>
     </table>
   );
 };
