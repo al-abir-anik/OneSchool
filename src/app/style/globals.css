@@ -7,6 +7,7 @@
   --color-aaaPurpleLight: #f1f0ff;
   --color-aaaYellow: #fae27c;
   --color-aaaYellowLight: #fefce8;
+  --color-aaaRed: #f46a6a;
 }
 
 :root {
@@ -31,8 +32,7 @@ body {
 }
 
 
-/*          React Big Calender          */
-
+/* React Big Calender  */
 .rbc-btn-group:first-child {
   display: none !important;
 }
